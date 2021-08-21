@@ -175,6 +175,10 @@ function show() {
   } else {
     curent.innerHTML = num3;
     -scor.innerHTML--;
+    box1.textContent = "";
+    box2.textContent = "";
+    box3.textContent = "";
+    box4.textContent = "";
     show_answer.style.color = "red";
     show_answer.innerHTML = "Sarry one score low";
     setTimeout(() => {
