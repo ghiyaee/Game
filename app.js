@@ -166,12 +166,20 @@ function answer4() {
   }
 }
 function show() {
-  curent.innerHTML = num3;
-  -scor.innerHTML--;
-  show_answer.style.color = "red";
-  show_answer.innerHTML = "Sarry one score low";
-  setTimeout(() => {
-    show_answer.style.color = "white";
-    show_answer.innerHTML = "press and answer correct";
-  }, 2000);
+  if (
+    box1.textContent == "ok" ||
+    box2.textContent == "ok" ||
+    box3.textContent == "ok" ||
+    box4.textContent == "ok"
+  ) {
+  } else {
+    curent.innerHTML = num3;
+    -scor.innerHTML--;
+    show_answer.style.color = "red";
+    show_answer.innerHTML = "Sarry one score low";
+    setTimeout(() => {
+      show_answer.style.color = "white";
+      show_answer.innerHTML = "press and answer correct";
+    }, 2000);
+  }
 }
