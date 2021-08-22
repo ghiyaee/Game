@@ -45,7 +45,7 @@ function settime() {
     }, 6000);
   }
 
-  timer.innerHTML = `StartTimer:${time[0]}sec`;
+  timer.innerHTML = `Timer:${time[0]}sec`;
 }
 
 function action() {
