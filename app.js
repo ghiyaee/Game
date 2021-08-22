@@ -207,7 +207,7 @@ function show() {
       show_answer.innerHTML = "Sarry one score low";
       setTimeout(() => {
         show_answer.style.color = "white";
-        show_answer.innerHTML = "press and answer correct";
+        show_answer.innerHTML = "If press and answer correct but low score";
       }, 2500);
       btn = 1;
     }
