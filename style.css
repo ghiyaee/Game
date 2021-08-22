@@ -1,6 +1,6 @@
 html {
   height: 100%;
-  background: radial-gradient(circle, #fff, #ccc);
+  background: radial-gradient(circle, rgb(221, 114, 64), rgb(231, 226, 85));
 }
 * {
   padding: 0;
@@ -9,7 +9,7 @@ html {
 }
 #container {
   height: 400px;
-  width: 530px;
+  width: 520px;
   background-color: lightblue;
   margin: 100px auto;
   position: relative;
@@ -19,12 +19,15 @@ html {
 }
 #score {
   position: absolute;
-  padding: 7px;
+  padding: 2px 3px;
   background-color: rgb(250, 250, 139);
-  left: 85%;
+  left: 80%;
   border-radius: 5px;
   border-bottom: 3px solid rgb(130, 133, 134);
+  font-size: 25px;
+  font-weight: bolder;
 }
+
 #curent {
   position: absolute;
   left: 40%;
@@ -62,7 +65,7 @@ html {
 #btn_answer {
   height: 43px;
   width: 400px;
-  background-color: mediumslateblue;
+  background-color: rgb(238, 104, 104);
   margin: 0 auto;
   border-bottom: 5px solid rgb(231, 236, 238);
   border-radius: 7px;
@@ -133,11 +136,11 @@ html {
 }
 #gameover {
   width: 460px;
-  height: 150px;
-  background: linear-gradient(tomato, rgb(241, 239, 109));
+  height: 205px;
+  background: radial-gradient(tomato, rgb(241, 239, 109));
   text-align: center;
   padding: 4px;
-  line-height: 50px;
+  line-height: 68px;
   font-size: 50px;
   position: absolute;
   left: 30px;

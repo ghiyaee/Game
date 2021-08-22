@@ -12,7 +12,8 @@ const tryagen = document.querySelector("#tryagen");
 const scr = document.querySelector("#scr");
 const show_answer = document.querySelector("#btn_answer");
 const gameStart = document.querySelector("#gamestart");
-console.log(show_answer);
+const score = document.querySelector("#score");
+console.log(score);
 start.addEventListener("click", action);
 box1.addEventListener("click", answer1);
 box2.addEventListener("click", answer2);
@@ -27,6 +28,9 @@ let num1 = 0;
 let num2 = 0;
 let num3 = 0;
 let box = 0;
+let vaild = true;
+let btn = 0;
+
 function settime() {
   if ((time[1] += 10) == 1000) {
     time[1] = 0;
@@ -35,13 +39,18 @@ function settime() {
     clearInterval(counte);
     gameover.style.display = "block";
     scr.innerHTML = scor.innerHTML;
+    // start.innerHTML = "New Game";
+    setTimeout(() => {
+      location.reload();
+    }, 6000);
   }
+
   timer.innerHTML = `StartTimer:${time[0]}sec`;
 }
 
-counte = setInterval(settime, 10);
-
 function action() {
+  set();
+  btn = 0;
   show_answer.style.display = "block";
   timer.style.display = "block";
   num1 = Math.floor(Math.random() * 10);
@@ -75,14 +84,23 @@ function action() {
     box3.innerHTML = Math.floor(Math.random() * 100);
   }
 }
-console.log(curent);
+
+function set() {
+  console.log(time[0]);
+  if (vaild == true && time[0] == 60) {
+    counte = setInterval(settime, 10);
+    vaild = false;
+  } else {
+    vaild = true;
+  }
+}
 
 function answer1() {
   if (box1.textContent == "") {
     gameStart.style.display = "block";
     setTimeout(() => {
       gameStart.style.display = "none";
-    }, 1500);
+    }, 2500);
   } else {
     if (box1.textContent == num3) {
       +scor.innerHTML++;
@@ -90,12 +108,12 @@ function answer1() {
       current.style.display = "block";
       setTimeout(() => {
         current.style.display = "none";
-      }, 1000);
+      }, 2500);
     } else {
       tryagen.style.display = "block";
       setTimeout(() => {
         tryagen.style.display = "none";
-      }, 1000);
+      }, 2500);
     }
   }
 }
@@ -104,7 +122,7 @@ function answer2() {
     gameStart.style.display = "block";
     setTimeout(() => {
       gameStart.style.display = "none";
-    }, 1500);
+    }, 2500);
   } else {
     if (box2.textContent == num3) {
       +scor.innerHTML++;
@@ -112,12 +130,12 @@ function answer2() {
       current.style.display = "block";
       setTimeout(() => {
         current.style.display = "none";
-      }, 1000);
+      }, 2500);
     } else {
       tryagen.style.display = "block";
       setTimeout(() => {
         tryagen.style.display = "none";
-      }, 1000);
+      }, 2500);
     }
   }
 }
@@ -126,7 +144,7 @@ function answer3() {
     gameStart.style.display = "block";
     setTimeout(() => {
       gameStart.style.display = "none";
-    }, 1500);
+    }, 2500);
   } else {
     if (box3.textContent == num3) {
       +scor.innerHTML++;
@@ -134,12 +152,12 @@ function answer3() {
       current.style.display = "block";
       setTimeout(() => {
         current.style.display = "none";
-      }, 1000);
+      }, 2500);
     } else {
       tryagen.style.display = "block";
       setTimeout(() => {
         tryagen.style.display = "none";
-      }, 1000);
+      }, 2500);
     }
   }
 }
@@ -173,17 +191,25 @@ function show() {
     box4.textContent == "ok"
   ) {
   } else {
-    curent.innerHTML = num3;
-    -scor.innerHTML--;
-    box1.textContent = "";
-    box2.textContent = "";
-    box3.textContent = "";
-    box4.textContent = "";
-    show_answer.style.color = "red";
-    show_answer.innerHTML = "Sarry one score low";
-    setTimeout(() => {
+    if (btn == 0) {
+      curent.innerHTML = num3;
+      -scor.innerHTML--;
+      score.style.backgroundColor = "red";
+      setTimeout(
+        () => (score.style.backgroundColor = `rgb(250,250,139)`),
+        1000
+      );
+      box1.textContent = "";
+      box2.textContent = "";
+      box3.textContent = "";
+      box4.textContent = "";
       show_answer.style.color = "white";
-      show_answer.innerHTML = "press and answer correct";
-    }, 2000);
+      show_answer.innerHTML = "Sarry one score low";
+      setTimeout(() => {
+        show_answer.style.color = "white";
+        show_answer.innerHTML = "press and answer correct";
+      }, 2500);
+      btn = 1;
+    }
   }
 }
