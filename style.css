@@ -9,7 +9,7 @@ html {
 }
 #container {
   height: 400px;
-  width: 500px;
+  width:480px;
   background-color: lightblue;
   margin: 100px auto;
   position: relative;
