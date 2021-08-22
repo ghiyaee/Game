@@ -9,7 +9,7 @@ html {
 }
 #container {
   height: 400px;
-  width: 520px;
+  width: 500px;
   background-color: lightblue;
   margin: 100px auto;
   position: relative;
@@ -21,7 +21,7 @@ html {
   position: absolute;
   padding: 2px 3px;
   background-color: rgb(250, 250, 139);
-  left: 76%;
+  left: 78%;
   border-radius: 5px;
   border-bottom: 3px solid rgb(130, 133, 134);
   font-size: 25px;
