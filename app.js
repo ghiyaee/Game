@@ -37,6 +37,7 @@ function settime() {
     time[0]--;
   } else if (time[0] <= 0) {
     clearInterval(counte);
+    document.querySelector("#container").style.filter = "blur(5px)";
     gameover.style.display = "block";
     scr.innerHTML = scor.innerHTML;
     // start.innerHTML = "New Game";
